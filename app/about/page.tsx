@@ -57,7 +57,7 @@ export default function AboutPage() {
               About Edge Annex
             </h1>
             <p className="text-lg text-zinc-600 max-w-2xl mx-auto">
-              We're a team of AI experts and business strategists dedicated to helping organizations
+              We&apos;re a team of AI experts and business strategists dedicated to helping organizations
               harness the power of artificial intelligence for sustainable growth and innovation.
             </p>
           </div>
