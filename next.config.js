@@ -1,8 +1,8 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-  output: 'standalone',
   images: {
-    unoptimized: true,
+    domains: ['vercel.com'],
+    unoptimized: process.env.NODE_ENV === 'development',
   },
 }
 
