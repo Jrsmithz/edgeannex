@@ -257,61 +257,65 @@ export default function ArticlePage() {
       <Navigation />
       <main className="pt-24">
         <div className="max-w-3xl mx-auto px-6">
-          <div className="mb-12">
-            <div className="flex items-center gap-3 mb-4">
-              <span className="text-sm text-blue-600 font-medium">{article.category}</span>
-              <span className="text-zinc-300">•</span>
-              <span className="text-sm text-zinc-500">{article.readTime}</span>
+          <div className="mb-8">
+            <div className="flex items-center gap-4 text-sm text-zinc-600 mb-4">
+              <span>{article.category}</span>
+              <span>•</span>
+              <span>{article.date}</span>
+              <span>•</span>
+              <span>{article.readTime}</span>
             </div>
-
             <h1 className="text-4xl font-medium tracking-tight text-zinc-900 mb-4">
               {article.title}
             </h1>
-
-            <div className="flex items-center justify-between border-b border-zinc-200 pb-6">
-              <div className="flex items-center gap-3">
-                <div>
-                  <div className="font-medium text-zinc-900">{article.author}</div>
-                  <div className="text-sm text-zinc-500">{article.date}</div>
-                </div>
-              </div>
-              <div className="flex gap-2">
-                {article.topics.map((topic, index) => (
-                  <span 
-                    key={index}
-                    className="px-2 py-1 bg-zinc-100 text-zinc-600 rounded-full text-xs"
-                  >
-                    {topic}
-                  </span>
-                ))}
-              </div>
+            <div className="flex items-center gap-4 text-sm">
+              <span className="text-zinc-900">By {article.author}</span>
             </div>
           </div>
 
-          <article className="prose prose-zinc max-w-none">
+          <div className="prose prose-zinc max-w-none mb-16">
             {article.content.map((section, index) => {
-              switch (section.type) {
-                case "paragraph":
-                  return <p key={index} className="text-zinc-600 mb-6">{section.content}</p>
-                case "heading":
-                  return <h2 key={index} className="text-2xl font-medium text-zinc-900 mt-12 mb-6">{section.content}</h2>
-                case "list":
-                  return (
-                    <ul key={index} className="list-disc pl-6 mb-6 space-y-2">
-                      {section.items.map((item, itemIndex) => (
-                        <li key={itemIndex} className="text-zinc-600">{item}</li>
-                      ))}
-                    </ul>
-                  )
-                default:
-                  return null
+              if (section.type === "paragraph") {
+                return (
+                  <p key={index} className="text-zinc-600 mb-6">
+                    {section.content}
+                  </p>
+                )
               }
+              if (section.type === "heading") {
+                return (
+                  <h2 key={index} className="text-2xl font-medium text-zinc-900 mb-4">
+                    {section.content}
+                  </h2>
+                )
+              }
+              if (section.type === "list" && section.items && section.items.length > 0) {
+                return (
+                  <ul key={index} className="list-disc pl-6 mb-6 space-y-2">
+                    {section.items.map((item, itemIndex) => (
+                      <li key={itemIndex} className="text-zinc-600">{item}</li>
+                    ))}
+                  </ul>
+                )
+              }
+              return null
             })}
-          </article>
+          </div>
 
-          <div className="mt-16 pt-8 border-t border-zinc-200">
-            <Button asChild className="bg-zinc-900 text-white hover:bg-zinc-800 transition-colors px-8 py-4 rounded text-sm w-full">
-              <Link href="/contact">Discuss Your AI Strategy</Link>
+          <div className="flex flex-wrap gap-2 mb-8">
+            {article.topics.map((topic, index) => (
+              <span
+                key={index}
+                className="px-3 py-1 bg-zinc-100 text-zinc-900 text-sm rounded-full"
+              >
+                {topic}
+              </span>
+            ))}
+          </div>
+
+          <div className="border-t border-zinc-200 pt-8">
+            <Button asChild className="bg-zinc-900 text-white hover:bg-zinc-800 transition-colors">
+              <Link href="/insights">Back to Insights</Link>
             </Button>
           </div>
         </div>
