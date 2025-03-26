@@ -47,7 +47,7 @@ export default function Page() {
               </h1>
               <div className="flex flex-col items-center gap-6">
                 <Button asChild className="bg-zinc-900 text-white hover:bg-zinc-800 transition-colors w-fit px-6 py-4 rounded text-sm">
-                  <Link href="/contact">Start Building</Link>
+                  <Link href="https://calendly.com/garys/30min">Start Building</Link>
                 </Button>
                 <p className="text-sm text-zinc-600">
                   Empowering global efficiency through innovative AI solutions

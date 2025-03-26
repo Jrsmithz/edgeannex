@@ -28,7 +28,7 @@ export function Navigation() {
               About Us
             </Link>
             <Button asChild className="bg-zinc-900 text-white hover:bg-zinc-800 transition-colors rounded px-4 py-2 text-sm">
-              <Link href="/contact">Book a Call</Link>
+              <Link href="https://calendly.com/garys/30min">Book a Call</Link>
             </Button>
           </nav>
         </div>

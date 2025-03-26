@@ -108,7 +108,7 @@ export default function CaseStudiesPage() {
 
           <div className="text-center mt-16">
             <Button asChild className="bg-zinc-900 text-white hover:bg-zinc-800 transition-colors px-8 py-4 rounded text-sm">
-              <Link href="/contact">Book a Call</Link>
+              <Link href="https://calendly.com/garys/30min">Book a Call</Link>
             </Button>
           </div>
         </div>

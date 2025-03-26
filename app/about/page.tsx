@@ -108,7 +108,7 @@ export default function AboutPage() {
 
           <div className="text-center">
             <Button asChild className="bg-zinc-900 text-white hover:bg-zinc-800 transition-colors px-8 py-4 rounded text-sm">
-              <Link href="/contact">Join Our Team</Link>
+              <Link href="https://calendly.com/garys/30min">Join Our Team</Link>
             </Button>
           </div>
         </div>

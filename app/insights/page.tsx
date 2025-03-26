@@ -130,7 +130,7 @@ export default function InsightsPage() {
 
           <div className="mt-16 pt-8 border-t border-zinc-200">
             <Button asChild className="bg-zinc-900 text-white hover:bg-zinc-800 transition-colors px-8 py-4 rounded text-sm w-full">
-              <Link href="/contact">Subscribe to Our Newsletter</Link>
+              <Link href="https://calendly.com/garys/30min">Subscribe to Our Newsletter</Link>
             </Button>
           </div>
         </div>
